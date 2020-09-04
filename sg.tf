@@ -1,13 +1,13 @@
 resource "aws_security_group" "lab1_internal" {
-  name        = "lab1_internal"
+  name        = "sg_lab1_internal"
   description = "Allow SSH from specific ip address"
-  
+
   ingress {
     description = "Home"
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["186.227.224.162/32"]
+    cidr_blocks = ["xxx.xxx.xxx.xxx/32"]
   }
 
   ingress {

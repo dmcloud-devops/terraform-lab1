@@ -1,3 +1,8 @@
+resource "aws_key_pair" "setup" {
+  key_name   = "setup-key"
+  public_key = var.public_key
+}
+
 resource "aws_security_group" "lab1_internal" {
   name        = "sg_lab1_internal"
   description = "Allow SSH from specific ip address"
@@ -34,12 +39,12 @@ resource "aws_security_group" "lab1_internal" {
   }
 
   tags = {
-    Name = "lab1_internal"
+    Name = "sg_lab1_internal"
   }
 }
 
 resource "aws_security_group" "lab1_external" {
-  name        = "lab1_external"
+  name        = "sg_lab1_external"
   description = "Allow HTTP and HTTPS from internet"
 
   ingress {
@@ -66,6 +71,6 @@ resource "aws_security_group" "lab1_external" {
   }
 
   tags = {
-    Name = "lab1_external"
+    Name = "sg_lab1_external"
   }
 }

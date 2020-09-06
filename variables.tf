@@ -1,13 +1,13 @@
 variable "public_key" {
-  default     = "XXXXXX"
+  default     = "XXXXX"
 }
 
 variable "vpc_id" {
   type    = string
-  default = "xxxx"
+  default = "XXX"
 }
 
 variable "vpc_subnet" {
   type    = list(string)
-  default = ["xxxx"]
+  default = ["XXX"]
 }

@@ -8,7 +8,16 @@
 - [x] EC2
 - [x] TargetGroup
 - [x] ALB
-- [ ] RDS (MySQL)
-- [ ] Bucket no S3 (arquivos estáticos)
-- [ ] Bucket no S3 (estado do terraform)
+- [x] RDS (MySQL)
+- [x] Bucket no S3 (arquivos estáticos)
+- [x] Bucket no S3 (estado do terraform)
+
+## Setup
+- Clone este repo
+- Crie na AWS um bucket no S3 chamado: ```running-state```
+- Altere as variaveis de ambiente de acordo com a sua conta, e defina no main o caminho de onde encontra-se sua chave pública.
+- ```terraform init```
+- ```terraform apply -auto-approve```
+
+Enjoy!
 

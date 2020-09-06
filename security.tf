@@ -12,7 +12,7 @@ resource "aws_security_group" "lab1_internal" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["xxx.xxx.xxx.xxx/32"]
+    cidr_blocks = ["170.244.222.169/32"]
   }
 
   ingress {
@@ -72,5 +72,38 @@ resource "aws_security_group" "lab1_external" {
 
   tags = {
     Name = "sg_lab1_external"
+  }
+}
+
+
+resource "aws_security_group" "lab1_internal_mysql" {
+  name        = "sg_lab1_internal_mysql"
+  description = "Allow MySQL from specific ip address"
+
+  ingress {
+    description = "Home Access"
+    from_port   = 3306
+    to_port     = 3306
+    protocol    = "tcp"
+    cidr_blocks = ["170.244.222.169/32"]
+  }
+
+  ingress {
+    description = "Local Access"
+    from_port   = 3306
+    to_port     = 3306
+    protocol    = "tcp"
+    cidr_blocks = ["172.31.0.0/16"]
+  }
+
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  tags = {
+    Name = "sg_lab1_internal_mysql"
   }
 }

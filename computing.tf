@@ -13,6 +13,7 @@ resource "aws_instance" "docker" {
   }
 }
 
-output "public_dns" {
-  value       = ["${aws_instance.docker.public_dns}"]
+output "public_ip" {
+  description = "List of public IP addresses assigned to the instances, if applicable"
+  value       = aws_instance.this.*.public_ip
 }

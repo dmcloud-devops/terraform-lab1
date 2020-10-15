@@ -12,7 +12,7 @@ resource "aws_security_group" "lab1_internal" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["170.244.222.169/32"]
+    cidr_blocks = ["XXX/32"]
   }
 
   ingress {
@@ -29,6 +29,22 @@ resource "aws_security_group" "lab1_internal" {
     to_port     = 443
     protocol    = "tcp"
     cidr_blocks = ["172.31.0.0/16"]
+  }
+
+  ingress {
+    description = "Grafana"
+    from_port   = 3000
+    to_port     = 3000
+    protocol    = "tcp"
+    cidr_blocks = ["XXX/32"]
+  }
+
+  ingress {
+    description = "Prometheus"
+    from_port   = 9090
+    to_port     = 9090
+    protocol    = "tcp"
+    cidr_blocks = ["XXX/32"]
   }
 
   egress {
@@ -85,7 +101,7 @@ resource "aws_security_group" "lab1_internal_mysql" {
     from_port   = 3306
     to_port     = 3306
     protocol    = "tcp"
-    cidr_blocks = ["170.244.222.169/32"]
+    cidr_blocks = ["XXX/32"]
   }
 
   ingress {

@@ -24,7 +24,7 @@ resource "aws_lb" "alb_docker" {
   internal           = false
   load_balancer_type = "application"
   subnets         = var.vpc_subnet
-  security_groups = ["${aws_security_group.lab1_external.id}"]
+  security_groups = [aws_security_group.lab1_external.id]
   tags = {
     Name = "alb_docker"
   }   

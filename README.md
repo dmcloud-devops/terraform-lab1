@@ -15,7 +15,7 @@
 ## Setup
 - Clone este repo
 - Crie na AWS um bucket no S3 chamado: ```running-state```
-- Altere as variaveis de ambiente de acordo com a sua conta, e defina no main o caminho de onde encontra-se sua chave pública.
+- Altere as variaveis de ambiente de acordo com a sua conta, procure nos arquivos por XXX e altere de acordo com a necessidade, e defina no main o caminho de onde encontra-se sua chave pública.
 - ```terraform init```
 - ```terraform apply -auto-approve```
 

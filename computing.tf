@@ -3,7 +3,7 @@ resource "aws_instance" "docker" {
   instance_type               = "t3.medium"
   associate_public_ip_address = true
   key_name                    = aws_key_pair.setup.key_name
-  vpc_security_group_ids      = ["${aws_security_group.lab1_internal.id}"]
+  vpc_security_group_ids      = [aws_security_group.lab1_internal.id]
   root_block_device {
     volume_type = "gp2"
     volume_size = 20
@@ -13,7 +13,6 @@ resource "aws_instance" "docker" {
   }
 }
 
-output "public_ip" {
-  description = "List of public IP addresses assigned to the instances, if applicable"
-  value       = aws_instance.this.*.public_ip
+output "instance_ip_addr" {
+  value = aws_instance.docker.public_ip
 }

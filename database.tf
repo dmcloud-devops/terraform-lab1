@@ -9,5 +9,5 @@ resource "aws_db_instance" "banco" {
   password             = "12345678"
   parameter_group_name = "default.mysql5.7"
   skip_final_snapshot  = true
-  vpc_security_group_ids = ["${aws_security_group.lab1_internal_mysql.id}"]
+  vpc_security_group_ids = [aws_security_group.lab1_internal_mysql.id]
 }
